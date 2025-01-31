@@ -2,6 +2,7 @@ package com.example.springdemo.mapper;
 
 import com.example.springdemo.domain.Todo;
 import com.example.springdemo.dto.GetTodoListDto;
+import com.example.springdemo.dto.TodoDetailDto;
 import com.example.springdemo.dto.request.CreateTodoRequest;
 import com.example.springdemo.dto.response.CreateTodoResponse;
 import com.example.springdemo.dto.response.GetTodoListResponse;
@@ -20,7 +21,7 @@ public class TodoMapper {
     }
 
     public GetTodoListDto toGetTodoListDto(Todo todo) {
-        return new GetTodoListDto(todo.getTitle());
+        return new GetTodoListDto(todo.getId(), todo.getTitle());
     }
 
     public GetTodoListResponse toGetTodoListResponse(List<Todo> todoList) {
@@ -29,5 +30,9 @@ public class TodoMapper {
                 .toList();
 
         return new GetTodoListResponse(todoDtoList);
+    }
+
+    public TodoDetailDto toTodoDetailDto(Todo todo) {
+        return new TodoDetailDto(todo.getTitle(), todo.getDescription());
     }
 }
