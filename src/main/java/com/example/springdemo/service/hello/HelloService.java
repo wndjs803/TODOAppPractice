@@ -1,4 +1,4 @@
-package com.example.springdemo.service;
+package com.example.springdemo.service.hello;
 
 import com.example.springdemo.dto.UserDto;
 

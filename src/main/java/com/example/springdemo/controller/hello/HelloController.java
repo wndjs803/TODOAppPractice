@@ -1,7 +1,7 @@
-package com.example.springdemo.controller;
+package com.example.springdemo.controller.hello;
 
 import com.example.springdemo.dto.UserDto;
-import com.example.springdemo.service.HelloService;
+import com.example.springdemo.service.hello.HelloService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

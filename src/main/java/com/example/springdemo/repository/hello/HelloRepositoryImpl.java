@@ -1,4 +1,4 @@
-package com.example.springdemo.repository;
+package com.example.springdemo.repository.hello;
 
 import com.example.springdemo.dto.UserDto;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,7 @@
-package com.example.springdemo.service;
+package com.example.springdemo.service.hello;
 
 import com.example.springdemo.dto.UserDto;
-import com.example.springdemo.repository.HelloRepository;
+import com.example.springdemo.repository.hello.HelloRepository;
 import org.springframework.stereotype.Service;
 
 @Service
