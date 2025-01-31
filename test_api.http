@@ -1,0 +1,14 @@
+### Test GET Hello API
+GET http://127.0.0.1:8080/hello/world
+
+###
+POST http://127.0.0.1:8080/hello/user
+Content-Type: application/json
+
+{
+  "name": "hello",
+  "age": 10
+}
+
+###
+GET http://127.0.0.1:8080/hello/user/hello
