@@ -1,9 +1,13 @@
 package com.example.springdemo.mapper;
 
 import com.example.springdemo.domain.Todo;
+import com.example.springdemo.dto.GetTodoListDto;
 import com.example.springdemo.dto.request.CreateTodoRequest;
 import com.example.springdemo.dto.response.CreateTodoResponse;
+import com.example.springdemo.dto.response.GetTodoListResponse;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class TodoMapper {
@@ -13,5 +17,17 @@ public class TodoMapper {
 
     public CreateTodoResponse toCreatedTodoResponse(boolean success) {
         return new CreateTodoResponse(success);
+    }
+
+    public GetTodoListDto toGetTodoListDto(Todo todo) {
+        return new GetTodoListDto(todo.getTitle());
+    }
+
+    public GetTodoListResponse toGetTodoListResponse(List<Todo> todoList) {
+        List<GetTodoListDto> todoDtoList = todoList.stream()
+                .map(this::toGetTodoListDto)
+                .toList();
+
+        return new GetTodoListResponse(todoDtoList);
     }
 }

@@ -3,7 +3,10 @@ package com.example.springdemo.repository.todo;
 import com.example.springdemo.domain.Todo;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -15,7 +18,11 @@ public class TodoRepositoryImpl implements TodoRepository{
 
     @Override
     public Todo save(Todo todo) {
-        data.put(todo.getId(), todo);
-        return todo;
+        return data.put(todo.getId(), todo);
+    }
+
+    @Override
+    public List<Todo> findAll() {
+        return List.copyOf(data.values());
     }
 }

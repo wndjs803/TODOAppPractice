@@ -3,6 +3,7 @@ package com.example.springdemo.service.todo;
 import com.example.springdemo.domain.Todo;
 import com.example.springdemo.dto.request.CreateTodoRequest;
 import com.example.springdemo.dto.response.CreateTodoResponse;
+import com.example.springdemo.dto.response.GetTodoListResponse;
 import com.example.springdemo.mapper.TodoMapper;
 import com.example.springdemo.repository.todo.TodoRepository;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,10 @@ public class TodoServiceImpl implements TodoService {
         Todo todo = todoMapper.toEntity(createTodoRequest);
         todoRepository.save(todo);
         return todoMapper.toCreatedTodoResponse(true);
+    }
+
+    @Override
+    public GetTodoListResponse getTodoList() {
+        return todoMapper.toGetTodoListResponse(todoRepository.findAll());
     }
 }
